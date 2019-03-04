@@ -1,5 +1,5 @@
 package com.dtb.utils.base
 
-interface DtBaseView<T> {
+interface DtbBaseView<T> {
     fun setPresenter(bean: T?)
 }

@@ -3,7 +3,7 @@ package com.dtb.utils.sample
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
-import com.dtb.utils.base.DtBaseActivity
+import com.dtb.utils.base.DtbBaseActivity
 import io.reactivex.Observable
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.observers.DisposableObserver
@@ -18,7 +18,7 @@ import java.util.concurrent.TimeUnit
  * @description
  *
  */
-class TimeActivity : DtBaseActivity() {
+class TimeActivity : DtbBaseActivity() {
     override fun getLayoutResource(): Int {
         return R.layout.activity_time
     }

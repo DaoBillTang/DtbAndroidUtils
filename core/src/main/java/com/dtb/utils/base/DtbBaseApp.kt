@@ -20,7 +20,7 @@ import com.dtb.utils.commons.toast.Tnormal
  * @version: 1.0
  * @description:
  */
-abstract class DtBaseApp : Application() {
+abstract class DtbBaseApp : Application() {
 
     private var life: LifeListener? = null
     var act: Activity? = null

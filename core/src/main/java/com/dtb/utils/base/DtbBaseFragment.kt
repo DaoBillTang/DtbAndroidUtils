@@ -15,7 +15,7 @@ import io.reactivex.subjects.BehaviorSubject
  * Created by Bill on 2016/9/18 11:32.
  * emal:1750352866@qq.com
  */
-abstract class DtBaseFragment : Fragment(), LifecycleProvider<FragmentEvent> {
+abstract class DtbBaseFragment : Fragment(), LifecycleProvider<FragmentEvent> {
     private var proDialg: ProgressDialog? = null
     private var isFristVisibile = false
 

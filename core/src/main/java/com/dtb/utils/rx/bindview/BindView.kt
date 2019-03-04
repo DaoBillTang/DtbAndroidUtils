@@ -6,7 +6,7 @@ import android.support.annotation.MainThread
 import android.support.v4.app.Fragment
 import android.view.MotionEvent
 import android.view.View
-import com.dtb.utils.base.DtBaseActivity
+import com.dtb.utils.base.DtbBaseActivity
 import com.dtb.utils.commons.logger.Lerror
 import com.dtb.utils.rx.lifecycle.ActivityEvent
 import io.reactivex.functions.Predicate
@@ -32,7 +32,7 @@ import java.util.concurrent.TimeUnit
 @MainThread
 fun View.bindClick(listener: () -> Unit, time: Long, act: Activity?,
                    event: ActivityEvent = ActivityEvent.DESTROY) {
-    if (act is DtBaseActivity) {
+    if (act is DtbBaseActivity) {
         ViewClickObservable(this)
                 .compose(act.bindUntilEvent(event))
                 .throttleFirst(time, TimeUnit.SECONDS)
@@ -60,7 +60,7 @@ fun View.bindClick(listener: () -> Unit, time: Long, fra: Fragment,
 fun View.bindLongClick(listener: () -> Boolean, time: Long, act: Activity?,
                        call: Boolean = true,
                        event: ActivityEvent = ActivityEvent.DESTROY) {
-    if (act is DtBaseActivity) {
+    if (act is DtbBaseActivity) {
         ViewLongClickObservable(this, call)
                 .compose(act.bindUntilEvent(event))
                 .throttleFirst(time, TimeUnit.SECONDS)
@@ -89,7 +89,7 @@ fun View.bindLongClick(listener: () -> Boolean, time: Long, fra: Fragment,
 fun View.bindTouch(listener: (MotionEvent) -> Boolean,
                    act: Activity?,
                    event: ActivityEvent = ActivityEvent.DESTROY) {
-    if (act is DtBaseActivity) {
+    if (act is DtbBaseActivity) {
         ViewTouchObservable(this, Predicate { listener.invoke(it) })
                 .compose(act.bindUntilEvent(event))
                 .subscribe { }
@@ -119,7 +119,7 @@ fun View.bindScroll(listener: (ViewScrollChangeEvent) -> Unit,
     if (Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
         Lerror("当前版本小于23")
     }
-    if (act is DtBaseActivity) {
+    if (act is DtbBaseActivity) {
         ViewScrollObservable(this)
                 .compose(act.bindUntilEvent(event))
                 .subscribe { listener.invoke(it) }

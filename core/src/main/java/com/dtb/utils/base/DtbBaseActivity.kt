@@ -1,5 +1,6 @@
 package com.dtb.utils.base
 
+import android.annotation.SuppressLint
 import android.app.ProgressDialog
 import android.graphics.Rect
 import android.os.Build
@@ -21,7 +22,7 @@ import io.reactivex.subjects.BehaviorSubject
  * emal:1750352866@qq.com
  * 2018.3.16 添加了 对于软键盘 的监听效果
  */
-abstract class DtBaseActivity :
+abstract class DtbBaseActivity :
         AppCompatActivity(),
         LifecycleProvider<ActivityEvent>,
         PermissionCallbacks {
@@ -167,6 +168,7 @@ abstract class DtBaseActivity :
 
     override fun onPermissionsDenied(requestCode: Int, perms: List<String>) {}
 
+    @SuppressLint("ObsoleteSdkInt")
     override fun onDestroy() {
         lifecycleSubject.onNext(ActivityEvent.DESTROY)
         //移除布局变化监听

@@ -5,7 +5,7 @@ import android.os.Looper
 import android.view.View
 import android.widget.TextView
 import android.widget.Toast
-import com.dtb.utils.base.DtBaseActivity
+import com.dtb.utils.base.DtbBaseActivity
 import com.dtb.utils.commons.logger.Lerror
 import com.dtb.utils.commons.logger.Linfo
 import com.dtb.utils.commons.timer.CountDownImpl
@@ -16,7 +16,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import retrofit2.Response
 import java.io.Serializable
 
-class MainActivity : DtBaseActivity(), CountDownContract.View {
+class MainActivity : DtbBaseActivity(), CountDownContract.View {
     override fun getLayoutResource(): Int {
         return R.layout.activity_main
     }

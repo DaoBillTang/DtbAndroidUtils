@@ -58,8 +58,8 @@ class CrashHandler private constructor() : Thread.UncaughtExceptionHandler {
             Process.killProcess(Process.myPid())
         }
 
-        if (mContext is DtBaseApp) {
-            (mContext as DtBaseApp).act?.showResultDialog("错误", "抱歉，发生了一点意外。")
+        if (mContext is DtbBaseApp) {
+            (mContext as DtbBaseApp).act?.showResultDialog("错误", "抱歉，发生了一点意外。")
         }
     }
 

@@ -1,6 +1,6 @@
 package com.dtb.utils.commons.timer.contract
 
-import com.dtb.utils.base.DtBasePresenter
+import com.dtb.utils.base.DtbBasePresenter
 
 /**
  * Project com.daotangbill.exlib.commons.timer.contract
@@ -20,7 +20,7 @@ interface CountDownContract {
         fun timerChange(timeLimit: Long, key: Int = 0)
     }
 
-    interface Presenter : DtBasePresenter {
+    interface Presenter : DtbBasePresenter {
 
         /**
          * 绑定某个 View

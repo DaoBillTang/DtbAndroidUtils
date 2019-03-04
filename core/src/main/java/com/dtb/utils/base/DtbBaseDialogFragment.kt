@@ -11,7 +11,7 @@ import android.support.v4.app.FragmentManager
  * @version 1.0
  * @description
  */
-open class DtBaseDialogFragment : DialogFragment() {
+open class DtbBaseDialogFragment : DialogFragment() {
 
     /**
      *  取消掉 了 commit 改为使用 commitAllowingStateLoss；

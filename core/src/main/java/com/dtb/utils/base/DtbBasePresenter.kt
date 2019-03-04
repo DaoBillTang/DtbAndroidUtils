@@ -1,6 +1,6 @@
 package com.dtb.utils.base
 
-interface DtBasePresenter {
+interface DtbBasePresenter {
     fun onCreate()
 
     fun onDestroy()
